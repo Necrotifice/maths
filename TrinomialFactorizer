@@ -1,0 +1,32 @@
+#Even nums finder
+
+ANum = int(input("What is your a number?\n>"))
+BNum = int(input("What is your b number?\n>"))
+CNum = int(input("What is your c number?\n>"))
+
+#What two nums = A*C AND A + C
+AList = range(0,int(ANum))
+CList = range(0,int(CNum))
+ACSum = int(ANum) + int(CNum)
+ACProd = int(ANum) * int(CNum)
+
+#Main loop!
+for a in AList:
+    #Deal with corner case
+    if a == 0:
+        a = 1
+    for c in CList:
+        #Verbose line below
+        print("Checking " + str(a) + " and " + str(c))
+        if a + c == ACSum & a * c == ACProd:
+            print("1 = " + str(a) + ", N2 = " + str(c))
+            break
+        elif -a + c == ACSum & a * c == ACProd:
+            print("1 = -" + str(a) + ", N2 = " + str(c))
+            break
+        elif a - c == ACSum & a * c == ACProd:
+            print("1 = " + str(a) + ", N2 = -" + str(c))
+            break
+        elif -a - c == ACSum & a * c == ACProd:
+            print("1 = -" + str(a) + ", N2 = -" + str(c))
+            break
